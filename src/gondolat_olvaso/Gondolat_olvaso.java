@@ -20,7 +20,7 @@ public class Gondolat_olvaso {
     }
 
     private static String[] Kirak() {
-        String[] pakli = new String[24];
+        String[] pakli = new String[21];
         String[] szinek = {"P", "T", "Z", "M"};
         String[] ertekek = {"Asz", "Kir", "Fel", "X", "IX", "VIII"};
         int s = 0;
@@ -29,8 +29,8 @@ public class Gondolat_olvaso {
         while (s < szinek.length) {
             while (e < ertekek.length) {
                 pakli[lap] = szinek[s] + ertekek[e];
-                if (s==4 && e==3){
-                e=5;
+                if (s==3 && e==2){
+                e=6;
                 }
                 //System.out.println(pakli[lap]);
                 e++;
