@@ -77,7 +77,12 @@ public class Gondolat_olvaso {
                 pakli[i+7] = paklik[20-(i-1)*3];
                 pakli[i+14] = paklik[21-(i-1)*3];
                 }
-                
+        case (3):
+            for (int i = 1; i < 7; i++) {
+                pakli[i] = paklik[21-(i-1)*3];
+                pakli[i+7] = paklik[20-(i-1)*3];
+                pakli[i+14] = paklik[19-(i-1)*3];
+                }
             }
             
         }    
