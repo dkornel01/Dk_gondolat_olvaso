@@ -29,6 +29,9 @@ public class Gondolat_olvaso {
         while (s < szinek.length) {
             while (e < ertekek.length) {
                 pakli[lap] = szinek[s] + ertekek[e];
+                if (s==4 && e==3){
+                e=5;
+                }
                 //System.out.println(pakli[lap]);
                 e++;
                 lap++;
@@ -37,7 +40,7 @@ public class Gondolat_olvaso {
             s++;
         }
         int x=0;
-        for (int y=0;y<8;y++){
+        for (int y=0;y<7;y++){
             for (int i=0;i<3;i++){
                 System.out.printf("%-8s",pakli[x]);
              x++;
@@ -48,10 +51,14 @@ public class Gondolat_olvaso {
     }
 
     private static int Melyik() {
-        System.out.print("adj meg egy oszlopot 1-3: ");
-        int valasztott = scr.nextInt();
-        System.out.println("");
-        return valasztott;
+        int oszlop=1;
+        boolean jo;
+        do{
+            System.out.print(("oszlop(1-3): "));
+            oszlop = scr.nextInt();
+            jo = oszlop>=1 && oszlop <=3;
+        } while (!jo);
+        return oszlop;
     }
 
     private static void EzVolt(int megoldas) {
