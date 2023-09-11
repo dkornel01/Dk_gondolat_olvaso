@@ -14,13 +14,13 @@ public class Gondolat_olvaso {
          // for(int i=0; i<3; i++){
         String[] pakli=Kirak();
         int megoldas = Melyik();
-        Kever(pakli);
+        Kever(pakli,megoldas);
         //   }
         EzVolt(megoldas);
     }
 
     private static String[] Kirak() {
-        String[] pakli = new String[21];
+        String[] pakli = new String[22];
         String[] szinek = {"P", "T", "Z", "M"};
         String[] ertekek = {"Asz", "Kir", "Fel", "X", "IX", "VIII"};
         int s = 0;
@@ -65,7 +65,41 @@ public class Gondolat_olvaso {
         System.out.println(megoldas + " Ez a szam volt a megoldas");
     }
 
-    private static void Kever(String[] pakli) {
+    private static void Kever(String[] pakli,int oszlop) {
+        String[] pakli2=pakli;
+        switch ((oszlop+1)){
+            case 1:{
+                
+            }
+            case 2:{
+                
+            }
+            case 3:{
+                for (int i=1;i<7;i++){
+                    int x=14+i;
+                    pakli[20-(i-1)*3]=pakli2[x];
+                }
+                for (int i=1;i<7;i++){
+                    int x=7+i;
+                    pakli[20-(i-1)*3]=pakli2[x];
+                }
+                for (int i=1;i<7;i++){
+                    int x=i;
+                    pakli[20-(i-1)*3]=pakli2[x];
+                }
+               }
+            }
+            int k=0;
+            for (int y=0;y<7;y++){
+            for (int i=0;i<3;i++){
+                System.out.printf("%-8s",pakli[k]);
+                k++;
+                }
+            System.out.println();
+            }
+                
+            }
+        
         
     }
     
