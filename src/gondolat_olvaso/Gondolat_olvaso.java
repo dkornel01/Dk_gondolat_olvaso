@@ -6,21 +6,20 @@ import java.util.Scanner;
 
 
 public class Gondolat_olvaso {
-
+  static   String[] pakli = new String[21];
     static Scanner scr = new Scanner(System.in);
-    static Random rnd=new Random();
     
     public static void main(String[] args) {
          // for(int i=0; i<3; i++){
         String[] pakli=Kirak();
         int megoldas = Melyik();
-        Kever(pakli);
+        Kever(1);
         //   }
         EzVolt(megoldas);
     }
 
     private static String[] Kirak() {
-        String[] pakli = new String[21];
+      
         String[] szinek = {"P", "T", "Z", "M"};
         String[] ertekek = {"Asz", "Kir", "Fel", "X", "IX", "VIII"};
         int s = 0;
@@ -40,7 +39,7 @@ public class Gondolat_olvaso {
             s++;
         }
         int x=0;
-        for (int y=0;y<7;y++){
+        for (int y=0; y<7; y++){
             for (int i=0;i<3;i++){
                 System.out.printf("%-8s",pakli[x]);
              x++;
@@ -65,8 +64,27 @@ public class Gondolat_olvaso {
         System.out.println(megoldas + " Ez a szam volt a megoldas");
     }
 
-    private static void Kever(String[] pakli) {
+    private static void Kever(int oszlop) {
+       
+        switch(oszlop){
+            case(1): 
+                for (int i = 1; i < 7; i++) {
+                pakli[i] = pakli[20-(i-1)*3];
+                pakli[i+7] = pakli[19-(i-1)*3];
+                pakli[i+14] = pakli[21-(i-1)*3];
+                    
+                }
+        case(2): 
+        for (int i = 1; i < 7; i++) {
+                pakli[i] = pakli[19-(i-1)*3];
+                pakli[i+7] = pakli[20-(i-1)*3];
+                pakli[i+14] = pakli[21-(i-1)*3];
+                }
+                
+            }
+            
+        }
         
     }
     
-}
+
