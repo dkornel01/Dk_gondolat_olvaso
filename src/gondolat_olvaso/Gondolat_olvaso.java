@@ -18,11 +18,10 @@ public class Gondolat_olvaso {
         oszlop = Melyik();
         String[] tarto=new String[22];
         tarto=toltes(tarto,pakli);
-        lapvalaszto(oszlop,kor);
         Kever(oszlop,pakli,tarto);
         kiiras(pakli);
         }
-        EzVolt();
+        EzVolt(pakli);
     }
 
     private static void Kirak() {
@@ -50,8 +49,8 @@ public class Gondolat_olvaso {
         return oszlop;
     }
 
-    private static void EzVolt() {
-        System.out.println(lehet[0] + " Ez a szam volt a megoldas");
+    private static void EzVolt(String[] pakli) {
+        System.out.println("ez volt a lap: "+ pakli[11]);
     }
 
     private static void Kever(int oszlop,String[] pakli,String[] tarto) {
@@ -76,8 +75,8 @@ public class Gondolat_olvaso {
                 break;
         case (3):
                 for (int i = 1; i < 8; i++) {
-                pakli[i] = tarto[21-(i-1)*3];
-                pakli[i+7] = tarto[20-(i-1)*3];
+                pakli[i] = tarto[20-(i-1)*3];
+                pakli[i+7] = tarto[21-(i-1)*3];
                 pakli[i+14] = tarto[19-(i-1)*3];
                 }
                 break;
@@ -91,7 +90,7 @@ public class Gondolat_olvaso {
                     System.out.printf("%-8s",paklik[x]);
                  x++;
                 }
-                System.out.println(x);
+                System.out.println("");
             }
             System.out.println("-----------");
         }    
@@ -103,104 +102,6 @@ public class Gondolat_olvaso {
             x++;
         }
         return tarto;
-    }
-
-    private static void lapvalaszto(int oszlop,int kor) {
-        switch(oszlop){
-            case(1):
-                if (kor==0){
-                    int i=1;
-                    int x=0;
-                    while (i<22){
-                        if (i%3==1){
-                            lehet[x]=pakli[i];
-                            x++;
-                        }
-                        i++;
-                    }
-                }
-                else{
-                    String[] atmeneti=new String[7];
-                    int i=1;
-                    int x=0;
-                    while (i<22){
-                        if (i%3==1){
-                            int kereses=0;
-                            while (kereses<lehet.length){
-                                if (lehet[kereses]==pakli[i]){
-                                    atmeneti[x]=pakli[i];
-                                }
-                                kereses++;
-                            }
-                            x++;
-                        }
-                        i++;
-                    }
-                }
-                break;
-            case(2):
-                if (kor==0){
-                    int i=1;
-                    int x=0;
-                    while (i<22){
-                        if (i%3==2){
-                            lehet[x]=pakli[i];
-                            x++;
-                        }
-                        i++;
-                    }
-                }
-                else{
-                    String[] atmeneti=new String[7];
-                    int i=1;
-                    int x=0;
-                    while (i<22){
-                        if (i%3==2){
-                            int kereses=0;
-                            while (kereses<lehet.length){
-                                if (lehet[kereses]==pakli[i]){
-                                    atmeneti[x]=pakli[i];
-                                }
-                                kereses++;
-                            }
-                            x++;
-                        }
-                        i++;
-                    }
-                }
-                break;
-            case(3):
-                if (kor==0){
-                    int i=1;
-                    int x=0;
-                    while (i<22){
-                        if (i%3==0){
-                            lehet[x]=pakli[i];
-                            x++;
-                        }
-                        i++;
-                    }
-                }
-                else{
-                    String[] atmeneti=new String[7];
-                    int i=1;
-                    int x=0;
-                    while (i<22){
-                        if (i%3==0){
-                            int kereses=0;
-                            while (kereses<lehet.length){
-                                if (lehet[kereses]==pakli[i]){
-                                    atmeneti[x]=pakli[i];
-                                }
-                                kereses++;
-                            }
-                            x++;
-                        }
-                        i++;
-                    }
-                }
-                break;
-        }
     }
 }
     
